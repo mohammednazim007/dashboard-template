@@ -57,7 +57,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         <div className="flex flex-col h-full py-6 px-4">
           {/* Logo Area */}
           <div className="flex items-center gap-3 px-2 mb-10">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-500 to-orange-400 flex items-center justify-center text-white font-bold text-xs shadow-lg">
+            <div className="w-8 h-8 rounded-full from-purple-500 to-orange-400 flex items-center justify-center text-white font-bold text-xs shadow-lg">
               PL
             </div>
             <div className="flex flex-col">
