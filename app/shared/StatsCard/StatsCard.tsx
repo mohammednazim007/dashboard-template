@@ -9,6 +9,7 @@ interface StatsCardProps {
   iconColorClass: string;
   iconBgClass: string;
   growthColorClass?: string;
+  bgClass?: string;
 }
 
 const StatsCard: React.FC<StatsCardProps> = ({
@@ -19,9 +20,12 @@ const StatsCard: React.FC<StatsCardProps> = ({
   iconColorClass,
   iconBgClass,
   growthColorClass = "text-green-500",
+  bgClass = "bg-white/80",
 }) => {
   return (
-    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-5 shadow-sm border border-white/40 flex justify-between items-start">
+    <div
+      className={`${bgClass} backdrop-blur-sm rounded-xl p-5 shadow-sm border border-white/40 flex justify-between items-start`}
+    >
       <div className="flex flex-col gap-1">
         <span className="text-slate-600 text-sm font-medium">{title}</span>
         <h3 className="text-2xl font-bold text-slate-800 mt-2">{value}</h3>

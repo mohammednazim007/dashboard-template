@@ -8,7 +8,7 @@ interface AgencyTableProps {
 
 const AgencyTable: React.FC<AgencyTableProps> = ({ data }) => {
   return (
-    <div className="bg-white/40 backdrop-blur-md rounded-2xl border border-white/40 overflow-hidden shadow-sm mt-6">
+    <div className="blur-bg overflow-hidden shadow-sm mt-6">
       {/* Toolbar */}
       <div className="p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="relative w-full sm:w-96">
