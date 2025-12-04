@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   LayoutDashboard,
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import brandLogo from "@/app/assets/brand-logo.svg";
+import Link from "next/link";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -23,18 +25,31 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   const menuItems = [
-    { label: "Dashboard", icon: LayoutDashboard, active: true },
-    { label: "Users", icon: Users },
-    { label: "Agencies", icon: Building2 },
-    { label: "Coin Management", icon: Coins },
-    { label: "Live Streams", icon: Video },
-    { label: "Transaction History", icon: History },
-    { label: "PK Masters", icon: Trophy },
-    { label: "Kyc Centre", icon: ShieldCheck },
-    { label: "Moderation", icon: ShieldAlert },
-    { label: "Analytics", icon: BarChart3 },
-    { label: "Gifts & Assets", icon: Gift },
-    { label: "Settings", icon: Settings },
+    {
+      label: "Dashboard",
+      icon: LayoutDashboard,
+      active: true,
+      path: "/dashboard",
+    },
+    { label: "Users", icon: Users, path: "/dashboard/users" },
+    { label: "Agencies", icon: Building2, path: "/dashboard/agencies" },
+    {
+      label: "Coin Management",
+      icon: Coins,
+      path: "/dashboard/coin-management",
+    },
+    { label: "Live Streams", icon: Video, path: "/dashboard/live-streams" },
+    {
+      label: "Transaction History",
+      icon: History,
+      path: "/dashboard/transaction-history",
+    },
+    { label: "PK Masters", icon: Trophy, path: "/dashboard/pk-masters" },
+    { label: "Kyc Centre", icon: ShieldCheck, path: "/dashboard/kyc-centre" },
+    { label: "Moderation", icon: ShieldAlert, path: "/dashboard/moderation" },
+    { label: "Analytics", icon: BarChart3, path: "/dashboard/analytics" },
+    { label: "Gifts & Assets", icon: Gift, path: "/dashboard/gifts-assets" },
+    { label: "Settings", icon: Settings, path: "/dashboard/settings" },
   ];
 
   return (
@@ -87,9 +102,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           {/* Menu Items */}
           <nav className="flex-1 overflow-y-auto space-y-1 custom-scrollbar">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href="#"
+                href={item.path}
                 className={`
                   flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors
                   ${
@@ -104,7 +119,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
                   className={item.active ? "text-orange-500" : "text-slate-500"}
                 />
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

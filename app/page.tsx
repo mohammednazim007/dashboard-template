@@ -14,11 +14,6 @@ export default function Page() {
 
   return (
     <div>
-      {/* <TopHeader
-        userName={"Mohammed Nazim"}
-        adminId={"123456"}
-        avatarUrl={profile.src}
-      /> */}
       <div className="flex h-screen primary-bg overflow-hidden font-sans">
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <main className="flex-1 flex flex-col h-full relative overflow-hidden ">

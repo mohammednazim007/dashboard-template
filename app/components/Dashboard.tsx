@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Upload, Users, Wallet, BarChart } from "lucide-react";
 import { IAgency } from "../types/types";
@@ -74,7 +75,7 @@ const mockData: IAgency[] = [
 ];
 
 interface DashboardProps {
-  toggleSidebar: () => void;
+  toggleSidebar?: () => void;
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ toggleSidebar }) => {
@@ -85,26 +86,28 @@ const Dashboard: React.FC<DashboardProps> = ({ toggleSidebar }) => {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
           <div>
             <div className="flex items-center gap-3">
-              <button
-                onClick={toggleSidebar}
-                className="lg:hidden p-1 bg-white/50 rounded text-slate-700"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+              {toggleSidebar && (
+                <button
+                  onClick={toggleSidebar}
+                  className="lg:hidden p-1 bg-white/50 rounded text-slate-700"
                 >
-                  <line x1="3" y1="12" x2="21" y2="12"></line>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-              </button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                  </svg>
+                </button>
+              )}
               <h1 className="text-2xl font-bold text-slate-800">Dashboard</h1>
             </div>
             <p className="text-slate-500 text-sm mt-1">

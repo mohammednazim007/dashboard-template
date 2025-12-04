@@ -10,7 +10,7 @@ const AgencyTable: React.FC<AgencyTableProps> = ({ data }) => {
   return (
     <div className=" overflow-hidden shadow-sm mt-6">
       {/* Toolbar */}
-      <div className="pb-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div className="px-2 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="relative w-full sm:w-96">
           <input
             type="text"
