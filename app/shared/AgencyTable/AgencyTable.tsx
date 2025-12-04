@@ -8,9 +8,9 @@ interface AgencyTableProps {
 
 const AgencyTable: React.FC<AgencyTableProps> = ({ data }) => {
   return (
-    <div className="blur-bg overflow-hidden shadow-sm mt-6">
+    <div className=" overflow-hidden shadow-sm mt-6">
       {/* Toolbar */}
-      <div className="p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div className="pb-4 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="relative w-full sm:w-96">
           <input
             type="text"
@@ -19,18 +19,18 @@ const AgencyTable: React.FC<AgencyTableProps> = ({ data }) => {
           />
         </div>
         <div className="flex items-center gap-3 w-full sm:w-auto">
-          <button className="flex items-center justify-center gap-2 px-4 py-2 bg-white/70 hover:bg-white text-slate-600 text-sm font-medium rounded-lg transition-colors shadow-sm">
+          <button className="flex items-center justify-center gap-2 px-4 py-2 bg-white/70 hover:bg-white text-[#FF9080] text-sm font-medium rounded-lg transition-colors shadow-sm">
             <Filter size={16} />
             Filter
           </button>
-          <button className="flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-orange-600 text-white text-sm font-medium rounded-lg transition-colors shadow-sm whitespace-nowrap">
+          <button className="flex items-center justify-center gap-2 px-4 py-2 bg-primary bg-[#FF9080] text-white text-sm font-medium rounded-lg transition-colors shadow-sm whitespace-nowrap">
             Add Agency
           </button>
         </div>
       </div>
 
       {/* Table */}
-      <div className="overflow-x-auto">
+      <div className="blur-bg overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="bg-slate-500/10 text-slate-600 text-sm border-b border-slate-500/10">
@@ -74,7 +74,7 @@ const AgencyTable: React.FC<AgencyTableProps> = ({ data }) => {
                 </td>
                 <td className="py-3 px-4 text-slate-700">{row.name}</td>
                 <td className="py-3 px-4">
-                  <span className="inline-flex items-center justify-center px-2 py-0.5 rounded text-[10px] font-bold bg-purple-200 text-purple-700 shadow-sm border border-purple-300">
+                  <span className="inline-flex items-center justify-center px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-200 text-purple-700 shadow-sm border border-purple-300">
                     <span className="mr-0.5">💎</span> LV{row.level}
                   </span>
                 </td>

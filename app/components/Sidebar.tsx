@@ -12,8 +12,9 @@ import {
   BarChart3,
   Gift,
   Settings,
-  X,
 } from "lucide-react";
+import Image from "next/image";
+import brandLogo from "@/app/assets/brand-logo.svg";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -56,7 +57,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       >
         <div className="flex flex-col h-full py-6 px-4">
           {/* Logo Area */}
-          <div className="flex items-center gap-3 px-2 mb-10">
+          {/* <div className="flex items-center gap-3 px-2 mb-10">
             <div className="w-8 h-8 rounded-full from-purple-500 to-orange-400 flex items-center justify-center text-white font-bold text-xs shadow-lg">
               PL
             </div>
@@ -71,6 +72,16 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             <button className="lg:hidden ml-auto" onClick={toggleSidebar}>
               <X size={20} className="text-slate-600" />
             </button>
+          </div> */}
+          {/* Brand Logo */}
+          <div className="flex items-center gap-3 px-2 mb-10">
+            <Image
+              src={brandLogo}
+              alt="Pen Live"
+              width={500}
+              height={500}
+              priority={true}
+            />
           </div>
 
           {/* Menu Items */}
